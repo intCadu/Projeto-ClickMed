@@ -1,0 +1,98 @@
+#:import MDCard kivymd.uix.card.MDCard
+<MeuApp>:
+    md_bg_color: app.theme_cls.primary_color
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            elevation:0
+            title: ""
+            left_action_items: [["menu", lambda x: draw.set_state()]]
+
+MDScreen:
+    md_bg_color:'#212121'
+    MDBoxLayout:
+        orientation:'vertical'
+        MDBoxLayout:
+            size_hint_y:.23
+            padding:dp(25)
+            MDBoxLayout:
+                orientation:"vertical"
+                MDLabel:
+
+                    text:"ClickMed"
+                    font_style:"H6"
+                MDBoxLayout:
+                    adaptive_size:True
+                    spacing:dp(10)
+                    MDLabel:
+                        text:"Home"
+                        text_size:None,None
+                        adaptive_width:True
+                    MDIcon:
+                        icon:'chevron-down'
+
+            MDIconButton:
+                icon:"account-check"
+        MDGridLayout:
+            size_hint_y:.75
+            cols:2
+            padding:[dp(15),dp(15),dp(15),dp(35)]
+            spacing:dp(15)
+            ElementCard:
+                image:"images/icone.png"
+                text:"Unidade Prox."
+                
+
+            ElementCard:
+                image:"images/lupa.png"
+                text:"Fazer Atendimento."
+                
+            ElementCard:
+                image:"images/calendario.png"
+                text:"Atendimentos"
+                
+
+            ElementCard:
+                image:"images/conf.png"
+                text:"Configurações"
+                
+
+
+            ElementCard:
+                image:"images/planilha.png"
+                text:"Marcar Atendimento"
+                
+            ElementCard:
+                image:"images/sair.png"
+                text:"Sair."
+                
+
+
+<ElementCard@MDCard>:
+    #md_bg_color:69/255,55/255,86/255,1
+    md_bg_color: '#69f0ae'
+    padding:dp(15)
+    spacing:dp(15)
+    radius:dp(25)
+    ripple_behavior: True
+    image:''
+    text:""
+    items_count:""
+    subtext:''
+
+    orientation:'vertical'
+    Image:
+        source:root.image
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            halign:"center"
+            text:root.text
+            font_style:"H6"
+        MDLabel:
+            halign:"center"
+            font_style:"Caption"
+            text:root.subtext
+        MDLabel:
+            halign:"center"
+            text:root.items_count

@@ -1,0 +1,163 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import partial functools.partial
+
+<home>:
+    MDFloatLayout:
+        orientation: 'vertical'
+        Image: 
+            source: 'Images/bgLogin.jpg'
+            resizable: True
+            allow_stretch: True
+            size_hint: 1.75, 1.75
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+        ScreenManager: 
+            id: screen_nav
+            transition: NoTransition()
+            MDScreen:
+                name: 'home'
+
+                MDFloatLayout:
+                    MDCard:
+                        id: home
+                        orientation: 'vertical'
+                        size_hint: .4,.95
+                        pos_hint: {'center_x': .315,'center_y':.5}
+                        radius: [25,25,25,25]   
+                        elevation: 2
+                        md_bg_color: 'white'
+
+            MDScreen:
+                name: 'perfil'
+
+                MDFloatLayout:
+                    MDCard:
+                        id: perfil
+                        orientation: 'vertical'
+                        size_hint: .4,.95
+                        pos_hint: {'center_x': .315,'center_y':.5}
+                        radius: [25,25,25,25]   
+                        elevation: 2
+                        md_bg_color: 'white'
+
+                        MDFloatLayout:
+                            MDFloatLayout:
+                                pos_hint: {'center_x':0.5, 'center_y':0.85}
+                                size_hint: None, None
+                                size: "128dp", "128dp"
+                                canvas:
+                                    Color:
+                                        rgb: (223/255, 237/255, 240/255, 0)
+                                    Ellipse:
+                                        pos: self.pos
+                                        size: self.size
+                                        source: 'View/Images/PerfilKivy.PNG'
+               
+                            Image:
+                                source: 'Images/slogan.png'
+                                size_hint: .5, .5
+                                pos_hint: {'center_x': .5,'center_y':.07}
+                                allow_stretch: True
+                                resizable: True
+
+            MDScreen:
+                name: 'consulta'
+                
+                
+
+            MDScreen:
+                name: 'config'
+
+                MDCard:
+                    id: config
+                    orientation: 'vertical'
+                    size_hint: .4,.85
+                    pos_hint: {'center_x': .55,'center_y':.5}
+                    radius: [25,25,25,25]   
+                    elevation: 2
+
+            MDScreen:
+                name: 'sair'
+
+                MDFloatLayout:
+                    Image: 
+                        source: 'Images/bgLogin.jpg'
+                        resizable: True
+                        allow_stretch: True
+                        size_hint: 1.75, 1.75
+                        pos_hint: {'center_x':0.5,'center_y':0.5}
+
+                    MDCard:
+                        id: sair
+                        orientation: 'vertical'
+                        size_hint: .3, .5
+                        pos_hint: {'center_x': .55,'center_y':.5}
+                        radius: 20  
+                        elevation: 2
+
+                        MDFloatLayout:
+                            Image: 
+                                source: 'Images/slogan.png'
+                                size_hint: .75, .75
+                                pos_hint: {'center_x': .5,'center_y':.8}
+                                allow_stretch: True
+                                resizable: True
+
+                            MDLabel:
+                                halign: 'center'
+                                pos_hint: {'center_x': .5,'center_y':.5}
+                                text: 'Deseja sair?'
+                                theme_text_color: 'Custom'
+                                text_color: 'black'
+                                font_size: '20sp'
+                                
+                            ButtonFocus:
+                                size_hint_x: .3
+                                pos_hint: {'center_x':.5,'center_y':.3}
+                                text: 'Sair'
+                                text_color: 'black'
+                                focus_color: app.theme_cls.accent_color
+                                unfocus_color: '#55C4BE'
+                                on_release: 
+                                    root.goLogin()
+                                    root.manager.transition.direction = 'right'
+                            
+        MDFloatLayout:
+            MDNavigationRail:
+                anchor: 'center'
+                type: 'selected'
+                md_bg_color: '#55C4BE'
+                selected_color_background: 'lightblue'
+                ripple_color_item: "lightblue"
+
+                MDNavigationRailItem:
+                    text: "Home"
+                    icon: "home"
+                    on_release: screen_nav.current = 'home'
+
+                MDNavigationRailItem:
+                    text: "Perfil"
+                    icon: "account-details"
+                    on_release: screen_nav.current = 'perfil'
+
+                MDNavigationRailItem:
+                    text: "Consulta"
+                    icon: "hospital-box"
+                    on_release: screen_nav.current = 'consulta'
+
+                MDNavigationRailItem:
+                    text: "Config"
+                    icon: "cog"
+                    on_release: screen_nav.current = 'config'
+            
+                MDNavigationRailItem:
+                    text: "Sair"
+                    icon: "logout"
+                    on_release: screen_nav.current = 'sair'
+
+        
+
+        
+        
+
+            

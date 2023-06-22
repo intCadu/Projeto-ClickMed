@@ -1,0 +1,440 @@
+<consulta>:
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        md_bg_color: 'lightblue'
+
+        MDCard:
+            id: Consulta
+            orientation: 'vertical'
+            size_hint: .85, .4
+            pos_hint: {'center_x': .5,'center_y':.70}
+            radius: 16  
+            md_bg_color: 'lightblue'
+            
+            MDFloatLayout:
+                Image:
+                    source: 'Images/slogan.png'
+                    resizable: True
+                    allow_stretch: True
+                    size_hint: .35, .35
+                    pos_hint: {'center_x': .5,'center_y': .5}
+
+                MDFillRoundFlatIconButton:
+                    pos_hint: {'center_x': .25,'center_y': .15}    
+                    theme_text_color: 'Custom'
+                    specific_text_color: app.theme_cls.primary_color
+                    allow_stretch: True
+                    text_color: 'black'
+                    text: 'Home'
+                    icon: 'home'
+                    icon_color: 'black'
+                    md_bg_color: '#55C4BE'
+                    elevation_normal: 8
+                    size_hint_x: .3
+                    on_release: 
+                        root.goHome()
+                        root.manager.transition.direction = 'right'
+
+                MDFillRoundFlatIconButton:
+                    pos_hint: {'center_x': .75,'center_y': .15}    
+                    theme_text_color: 'Custom'
+                    specific_text_color: app.theme_cls.primary_color
+                    allow_stretch: True
+                    text_color: 'black'
+                    text: 'Diagnóstico'
+                    icon: 'hospital-box'
+                    icon_color: 'black'
+                    md_bg_color: '#55C4BE'
+                    elevation_normal: 8
+                    size_hint_x: .3
+                    on_release: 
+                        root.goDiag()
+                        root.manager.transition.direction = 'left'
+
+        ScrollView:
+
+            MDGridLayout:
+                padding: dp(10)
+                spacing: dp(10)
+                cols: 1
+                adaptive_height: True
+
+                MDFillRoundFlatButton: 
+                    text: 'Selecione os sintomas'
+                    theme_text_color: 'Custom'
+                    text_color: 'black'
+                    size_hint_x: .3
+                    md_bg_color: '#55C4BE'
+
+                MDSeparator:
+
+                MDStackLayout:
+                    adaptive_height: True
+                    spacing: dp(10)
+
+                    MDChip:
+                        id: DorCabeca
+                        text: 'Dor de cabeça' 
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        on_active: root.adicionarSintoma()
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: DorGarganta
+                        text: 'Dor de garganta'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: DorBarriga
+                        text: 'Dor de barriga'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: DorOuvido
+                        text: 'Dor de ouvido'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: DorMuscular
+                        text: 'Dor muscular'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Nausea
+                        text: 'Nausea'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Febre
+                        text: 'Febre'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Vomito
+                        text: 'Vômito'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Corisa
+                        text: 'Corisa'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Inchaco
+                        text: 'Inchaço'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Inflamacao
+                        text: 'Inflamação'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Fadiga
+                        text: 'Fadiga'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: DorOlhos
+                        text: 'Dor nos olhos'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Manchas
+                        text: 'Manchas no corpo'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Sonolencia
+                        text: 'Sonolência'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Tosse
+                        text: 'Tosse'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Diarreia
+                        text: 'Diarreia'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Coceira
+                        text: 'Coceira'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Tontura
+                        text: 'Tontura'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Ictericia
+                        text: 'Ictericia'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: CongestaoNasal
+                        text: 'Congestão nasal'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Espirros
+                        text: 'Espirros'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: SecrecaoNasal
+                        text: 'Secreção nasal'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: FaltaAr
+                        text: 'Falta de ar'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: MalEstar
+                        text: 'Mal-estar'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: PerdaApetite
+                        text: 'Perda de apetite'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Constipacao
+                        text: 'Constipação'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Diarreia
+                        text: 'Diarreia'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Alopecia
+                        text: 'Alopecia'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: Palpitacoes
+                        text: 'Palpitações'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+                    
+                    MDChip:
+                        id: DorPeito
+                        text: 'Dor no peito'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+
+                    MDChip:
+                        id: VisaoEmbacada
+                        text: 'Visão embaçada'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+                    
+                    MDChip:
+                        id: NarizSangramento
+                        text: 'Sangramento no nariz'
+                        text_color: 'black'
+                        icon_right: 'pill-multiple'
+                        md_bg_color: '#55C4BE'
+                        active: False
+                        
+                        allow_stretch: True
+                        resizable: True
+                    
+                    
+                    
